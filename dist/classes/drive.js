@@ -10,19 +10,21 @@ var Drive = /** @class */ (function () {
      * Constructor for Drive class.
      *
      * @param {string} filesystem Drive filesystem.
+     * @param {string} name Drive name.
      * @param {number} blocks Blocks associated to disk.
      * @param {number} used Used disk space.
      * @param {number} available Available disk space.
      * @param {string} capacity Disk capacity.
      * @param {string} mounted Indicates the mount point of the disk.
      */
-    function Drive(filesystem, blocks, used, available, capacity, mounted) {
+    function Drive(filesystem, blocks, used, available, capacity, mounted, name) {
         this._filesystem = filesystem;
         this._blocks = blocks;
         this._used = used;
         this._available = available;
         this._capacity = capacity;
         this._mounted = mounted;
+        this._name = name;
     }
     Object.defineProperty(Drive.prototype, "filesystem", {
         /**
@@ -92,6 +94,13 @@ var Drive = /** @class */ (function () {
          */
         get: function () {
             return this._mounted;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Drive.prototype, "name", {
+        get: function () {
+            return this._name;
         },
         enumerable: false,
         configurable: true

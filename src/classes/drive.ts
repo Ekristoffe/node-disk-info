@@ -35,23 +35,26 @@ export default class Drive {
      */
     private readonly _mounted: string;
 
+    private readonly _name: string;
     /**
      * Constructor for Drive class.
      *
      * @param {string} filesystem Drive filesystem.
+     * @param {string} name Drive name.
      * @param {number} blocks Blocks associated to disk.
      * @param {number} used Used disk space.
      * @param {number} available Available disk space.
      * @param {string} capacity Disk capacity.
      * @param {string} mounted Indicates the mount point of the disk.
      */
-    public constructor(filesystem: string, blocks: number, used: number, available: number, capacity: string, mounted: string) {
+    public constructor(filesystem: string, blocks: number, used: number, available: number, capacity: string, mounted: string, name: string) {
         this._filesystem = filesystem;
         this._blocks = blocks;
         this._used = used;
         this._available = available;
         this._capacity = capacity;
         this._mounted = mounted;
+        this._name = name;
     }
 
     /**
@@ -106,5 +109,8 @@ export default class Drive {
      */
     get mounted(): string {
         return this._mounted;
+    }
+    get name(): string {
+        return this._name;
     }
 }

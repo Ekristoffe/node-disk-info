@@ -28,7 +28,8 @@ function printResults(title, disks) {
         console.log('Used:', disk.used);
         console.log('Available:', disk.available);
         console.log('Capacity:', disk.capacity);
-        console.log('Mounted:', disk.mounted, '\n');
+        console.log('Mounted:', disk.mounted);
+        console.log('Name:', disk.name, '\n');
     }
 
 }
